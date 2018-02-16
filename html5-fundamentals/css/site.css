@@ -1,0 +1,251 @@
+#content-container {
+  margin-top: 64px;
+}
+.home-banner {
+  background-color: #eee;
+  height: 400px;
+}
+.module-title {
+  font-size: 2em;
+}
+.code-label {
+  font-size: 1.5em;
+}
+pre code {
+  font-size: 1.35em;
+}
+ul.code-tabs {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+ul.code-tabs li {
+  font-size: 1.5em;
+}
+.module-title {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+.console-message {
+  display: none;
+}
+#example-container {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 20px;
+}
+#example-container .logo {
+  margin-bottom: 20px;
+}
+label {
+  cursor: pointer;
+}
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+textarea,
+input[type="text"].form-control,
+input[type="url"].form-control,
+input[type="email"].form-control,
+input[type="number"].form-control,
+input[type="tel"].form-control,
+input[type="date"].form-control,
+input[type="month"].form-control,
+input[type="week"].form-control,
+textarea.form-control {
+  padding-left: 10px !important;
+}
+.detected {
+  background: url(../img/check.png) no-repeat center center;
+}
+.notDetected {
+  background: url(../img/x.png) no-repeat center center;
+}
+.api {
+  font-family: Consolas, 'Courier New', sans-serif;
+  padding: 1.5em;
+}
+.push-down-top {
+  margin-top: 20px;
+}
+.push-down-top-md {
+  margin-top: 40px;
+}
+.push-down-top-lg {
+  margin-top: 65px;
+}
+.push-down-top-sm {
+  margin-top: 10px;
+}
+.nav-link {
+  color: #b2dbfb;
+}
+input {
+  margin-top: 5px;
+}
+input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid {
+  color: #c33;
+  border-color: #c33;
+}
+input:focus:invalid:focus,
+textarea:focus:invalid:focus,
+select:focus:invalid:focus {
+  border-color: #c33;
+  -webkit-box-shadow: 0 0 6px #fcc;
+  -moz-box-shadow: 0 0 6px #fcc;
+  box-shadow: 0 0 6px #fcc;
+}
+input:invalid,
+textarea:invalid,
+select:invalid {
+  border-bottom: 1px solid #c33 !important;
+}
+input:valid + .invalid {
+  visibility: hidden;
+}
+input:invalid + .invalid {
+  visibility: visible;
+}
+input:required {
+  border-left: 4px solid #c33 !important;
+}
+input:valid {
+  border-bottom: transparent;
+}
+.invalid {
+  color: #999 !important;
+}
+li .dropdown {
+  margin-left: 20px;
+  margin-top: 21px;
+  cursor: pointer;
+}
+#vid {
+  cursor: pointer;
+}
+#thumbs img {
+  margin: 10px;
+}
+.inline {
+  display: inline;
+}
+.divider {
+  color: #ccc;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+[data-role="drag-drop-target"] {
+  float: left;
+  width: 500px;
+  height: 376px;
+  margin: 10px;
+  padding: 10px;
+  border: 3px solid #ddd;
+  border-radius: 4px;
+}
+.over {
+  background-color: #ffc;
+}
+[draggable="true"] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Support old versions of WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+.drag {
+  opacity: 0.25;
+}
+.none {
+  display: none;
+}
+.hljs {
+  background-color: transparent !important;
+}
+.home-icon {
+  width: 215px;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.home-layout p {
+  font-size: 1.45em;
+}
+.separator {
+  color: #5CB8FF;
+  margin-top: 20px;
+}
+.navbar-brand {
+  margin-top: -10px;
+}
+.nav-link {
+  text-transform: uppercase;
+}
+.caret {
+  display: inline-block;
+  margin-left: 3px;
+}
+footer {
+  background-color: #666;
+  min-height: 400px;
+  margin-top: 200px;
+  color: #fff;
+  border-top: solid 20px #eee;
+}
+footer a {
+  color: #ccc;
+}
+footer a:hover,
+footer a:active,
+footer a:focus,
+footer a:visited {
+  color: #999;
+}
+summary {
+  cursor: pointer;
+  outline: none;
+}
+.example-layout h1 {
+  margin-top: 45px;
+  text-transform: uppercase;
+  font-size: 3em;
+}
+.example-layout h2 {
+  font-size: 2em;
+  margin-top: -10px;
+}
+.example-layout aside {
+  position: absolute;
+  border: solid 3px #ccc;
+  margin: 20px;
+  padding: 20px;
+  max-width: 425px;
+  background-color: #fff;
+  right: -50%;
+  width: 300px;
+  top: -20px;
+}
+.example-layout summary {
+  font-size: 2em;
+}
+.example-layout p {
+  font-size: 1.5em;
+}
+.example-layout figcaption {
+  margin-top: -22px;
+}
+.narrow {
+  width: 60%;
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>HTML5 Fundamentals</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="css/site.css" type="text/css" />
+        <link rel="stylesheet" href="js/highlight/styles/github.css" />
+        <script src="js/modernizr.min.js" type="text/javascript"></script>
+        
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/highlight/highlight.pack.js" type="text/javascript"></script>    
+        <script src="js/app.js" type="text/javascript"></script>
+	</head>
+	<body>
+        <main>
+            <header>
+            <!-- Fixed navbar -->
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/html5-fundamentals.png" title="HTML5 Fundamentals" class="hidden-sm" />
+                        <img src="img/html5.png" title="HTML5 Fundamentals" class="visible-sm" />
+                    </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="example.html" class="nav-link">Example</a></li>
+                        <li class="separator visible-md visible-lg">|</li>
+                        <li><a href="selection.html" class="nav-link">Selection</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Forms<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="forms-markup.html">Forms</a></li>
+                                        <li><a href="forms-pseudo-classes.html">Pseudo Classes</a></li>
+                                        <li><a href="forms-validation.html">Native Validation</a></li>
+                                        <li><a href="forms-validation-custom.html">Custom Validation</a></li>
+                                        <li><a href="forms-validation-bootstrap.html">Bootstrap Module</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Media<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="media-basics.html">Basics</a></li>
+                                        <li><a href="media-scripted.html">Scripted Controls</a></li>
+                                        <li><a href="media-dynamic.html">Dynamic Load</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Canvas<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="canvas-basics.html">Basics</a></li>
+                                        <li><a href="canvas-manipulation.html">Manipulation</a></li>
+                                        <li><a href="canvas-clipping.html">Clipping</a></li>
+                                        <li><a href="canvas-charts.html">Charts</a></li>
+                                        <li><a href="canvas-video.html">Video</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Drag &amp; Drop<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="dd-basics.html">Basics</a></li>
+                                        <li><a href="dd-effects.html">Effects</a></li>
+                                        <li><a href="dd-datatransfer.html">Data Transfer Types</a></li>
+                                        <li><a href="dd-files.html">Files</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+                </nav>
+            </header>
+
+            <article id="content-container" class="container">
+                <div>
+
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs code-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#content-tab" aria-controls="content" role="tab" data-toggle="tab">Content</a></li>
+		<li role="presentation"><a href="#markup-tab" aria-controls="markup" role="tab" data-toggle="tab">Markup</a></li>
+		<li role="presentation"><a href="#css-tab" aria-controls="profile" role="tab" data-toggle="tab">CSS</a></li>
+		<li role="presentation"><a href="#javascript-tab" aria-controls="messages" role="tab" data-toggle="tab">JavaScript</a></li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane fade in active" id="content-tab">
+			<div id="example-container">
+
+				<!-- example markup -->
+        <canvas id="canvas" width="600" height="400"></canvas>
+				<!-- /example markup -->
+
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane fade" id="markup-tab">
+			<pre><code class="html hljs">&lt;canvas id="canvas" width="600" height="400"&gt;&lt;/canvas&gt;</code></pre>
+		</div>
+		<div role="tabpanel" class="tab-pane fade" id="css-tab">
+			<pre><code class="css hljs">/* none */</code></pre>
+		</div>
+
+
+		<div role="tabpanel" class="tab-pane fade" id="javascript-tab">
+      
+			<div class="module-title"><a data-toggle="collapse" href="#static-code" aria-expanded="false">Static</a></div>
+			<div class="collapse" id="static-code">
+				<pre><code class="javascript hljs">var
+  canvas = document.getElementById('canvas'),
+  context = null;
+
+if (Modernizr.canvas) {
+
+  context = canvas.getContext('2d');
+
+  var img = new Image();
+  img.onload = function() {
+
+    context.drawImage(img, 0, 0);
+
+    context.beginPath();
+    context.moveTo(70, 105);
+    context.lineTo(105, 132);
+    context.lineTo(142, 250);
+    context.lineTo(176, 175);
+    context.lineTo(212, 145);
+    context.lineTo(245, 197);
+    context.lineTo(280, 90);
+
+    context.stroke();
+  }
+  img.src = 'img/chart-background.png';
+}</code></pre>
+			</div>
+			
+			<div class="module-title"><a data-toggle="collapse" href="#dynamic-code" aria-expanded="false">Dynamic</a></div>
+			<div class="collapse" id="dynamic-code">
+				<pre><code class="javascript hljs">var chartData = [
+    { month:  70, perf: 125 },
+    { month: 105, perf: 280 },
+    { month: 140, perf: 115 },
+    { month: 175, perf:  45 },
+    { month: 210, perf: 200 },
+    { month: 245, perf: 245 },
+    { month: 280, perf: 177 }],
+
+    canvas,
+    context,
+    index = 0,
+
+    drawSegment = function() {
+        var x1, y1, x2, y2;
+
+        x1 = chartData[index].month;
+        y1 = chartData[index].perf;
+
+        x2 = chartData[index + 1].month;
+        y2 = chartData[index + 1].perf;
+
+        context.beginPath();
+        context.moveTo(x1, y1);
+        context.lineTo(x2, y2);
+        context.stroke();
+        index++;
+    };
+
+if (Modernizr.canvas) {
+
+    canvas = document.getElementById('canvas');
+    context = canvas.getContext('2d');
+
+    var bkgImg = new Image();
+    bkgImg.onload = function() {
+        context.drawImage(bkgImg, 0, 0);
+        drawSegment();
+    }
+    bkgImg.src = 'img/chart-background.png';
+
+    context.strokeStyle = 'rgb(31, 172, 242)';
+    context.lineWidth = 4;
+    context.lineCap = 'round';
+
+    var frame = setInterval(function() {
+        drawSegment();
+
+        if (!(index < chartData.length - 1)) {
+            clearInterval(frame);
+        }
+    }, 750);
+}</code></pre>
+			</div>
+		<!-- -------------------------------------------------------------------- -->
+		</div>
+	</div>
+</div>
+</div>
+            </article>
+            
+            <footer>
+                <div class="container">
+                    <div class="row push-down-top-lg hidden-xs">
+                        <div class="col-xs-offset-2 col-xs-3">
+                            <img src="img/html5-fundamentals.png" title="HTML5 Fundamentals" />
+                            <p>by <a href="http://craigshoemaker.net">Craig Shoemaker</a></p>
+                            <p class="lead"><a href="http://twitter.com/craigshoemaker">Craig Shoemaker</a> is a <a href="http://www.infragistics.com">developer</a>,
+        <a href="http://www.pluralsight.com/author/craig-shoemaker">instructor</a>, <a href="http://code-magazine.com/SearchResults.aspx?search=craig%20shoemaker">writer</a>, <a href="http://polymorphicpodcast.com">podcaster</a>, and a man of many hats at <a href="http://www.infragistics.com">Infragistics</a>.</p>
+                            <div class="push-down-top-md">
+                                <a href="https://www.pluralsight.com/courses/html5-fundamentals"><img src="img/pluralsight.png" title="HTML5 Fundamentals" /></a>
+                            </div>
+                        </div>
+                        <div class="col-xs-offset-1 col-xs-3">
+                            <a href="http://craigshoemaker.net"><img src="img/craig-shoemaker.png" class="img-responsive" title="Craig Shoemaker" /></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+        </main>
+    </body>
+</html>

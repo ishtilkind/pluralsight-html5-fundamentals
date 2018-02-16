@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>HTML5 Fundamentals</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="css/site.css" type="text/css" />
+        <link rel="stylesheet" href="js/highlight/styles/github.css" />
+        <script src="js/modernizr.min.js" type="text/javascript"></script>
+        
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/highlight/highlight.pack.js" type="text/javascript"></script>    
+        <script src="js/app.js" type="text/javascript"></script>
+	</head>
+	<body>
+        <main>
+            <header>
+            <!-- Fixed navbar -->
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/html5-fundamentals.png" title="HTML5 Fundamentals" class="hidden-sm" />
+                        <img src="img/html5.png" title="HTML5 Fundamentals" class="visible-sm" />
+                    </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="example.html" class="nav-link">Example</a></li>
+                        <li class="separator visible-md visible-lg">|</li>
+                        <li><a href="selection.html" class="nav-link">Selection</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Forms<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="forms-markup.html">Forms</a></li>
+                                        <li><a href="forms-pseudo-classes.html">Pseudo Classes</a></li>
+                                        <li><a href="forms-validation.html">Native Validation</a></li>
+                                        <li><a href="forms-validation-custom.html">Custom Validation</a></li>
+                                        <li><a href="forms-validation-bootstrap.html">Bootstrap Module</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Media<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="media-basics.html">Basics</a></li>
+                                        <li><a href="media-scripted.html">Scripted Controls</a></li>
+                                        <li><a href="media-dynamic.html">Dynamic Load</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Canvas<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="canvas-basics.html">Basics</a></li>
+                                        <li><a href="canvas-manipulation.html">Manipulation</a></li>
+                                        <li><a href="canvas-clipping.html">Clipping</a></li>
+                                        <li><a href="canvas-charts.html">Charts</a></li>
+                                        <li><a href="canvas-video.html">Video</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Drag &amp; Drop<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="dd-basics.html">Basics</a></li>
+                                        <li><a href="dd-effects.html">Effects</a></li>
+                                        <li><a href="dd-datatransfer.html">Data Transfer Types</a></li>
+                                        <li><a href="dd-files.html">Files</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+                </nav>
+            </header>
+
+            <article id="content-container" class="container">
+                <div>
+
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs code-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#content-tab" aria-controls="content" role="tab" data-toggle="tab">Content</a></li>
+		<li role="presentation"><a href="#markup-tab" aria-controls="markup" role="tab" data-toggle="tab">Markup</a></li>
+		<li role="presentation"><a href="#css-tab" aria-controls="profile" role="tab" data-toggle="tab">CSS</a></li>
+		<li role="presentation"><a href="#javascript-tab" aria-controls="messages" role="tab" data-toggle="tab">JavaScript</a></li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane fade in active" id="content-tab">
+			<div id="example-container">
+
+				<!-- example markup -->
+        		<canvas id="canvas" width="600" height="400"></canvas>
+				<!-- /example markup -->
+
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane fade" id="markup-tab">
+			<pre><code class="html hljs">&lt;canvas id="canvas" width="600" height="400"&gt;&lt;/canvas&gt;</code></pre>
+		</div>
+		<div role="tabpanel" class="tab-pane fade" id="css-tab">
+			<pre><code class="css hljs">/* none */</code></pre>
+		</div>
+
+
+		<div role="tabpanel" class="tab-pane fade" id="javascript-tab">
+      
+      <div class="module-title"><a data-toggle="collapse" href="#circle-code" aria-expanded="false">Circle</a></div>
+			<div class="collapse" id="circle-code">
+        <pre><code class="javascript hljs">var canvas = document.getElementById('canvas');
+var context = null;
+
+if (Modernizr.canvas) {
+
+  context = canvas.getContext('2d');
+
+  context.beginPath();
+  context.arc(
+      135,
+      120,
+      120,
+      0,
+      Math.PI * 2,
+      true);
+  context.clip();
+
+  var img = new Image();
+  img.onload = function() {
+      context.drawImage(img, 0, 0);
+
+      context.lineWidth = 15;
+      context.strokeStyle = '#cccccc';
+      context.stroke();
+  }
+  img.src = 'img/home.jpg';
+}</code></pre>
+      </div>
+      
+    <div class="module-title"><a data-toggle="collapse" href="#rectangle-code" aria-expanded="false">Rectangle</a></div>
+    <div class="collapse" id="rectangle-code">
+      <pre><code class="javascript hljs">var
+    canvas = document.getElementById('canvas'),
+    context = null,
+    x = 40,
+    y = 25,
+    width = height = 200;
+
+if (Modernizr.canvas) {
+
+    context = canvas.getContext('2d');
+
+    context.beginPath();
+    context.rect(x, y, width, height);
+    context.clip();
+
+    var img = new Image();
+    img.onload = function() {
+        context.drawImage(img, 0, 0);
+        context.lineWidth = 15;
+        context.strokeStyle = '#cccccc';
+        context.strokeRect(x, y, width, height);
+    }
+    img.src = 'img/home.jpg';
+}</code></pre>
+    </div>
+    
+    <div class="module-title"><a data-toggle="collapse" href="#boundaries-code" aria-expanded="false">Boundaries</a></div>
+    <div class="collapse" id="boundaries-code">
+      <pre><code class="javascript hljs">var canvas = document.getElementById('canvas');
+var  context = null,
+  x = 40,
+  y = 25,
+  width = height = 200;
+
+if (Modernizr.canvas) {
+
+  context = canvas.getContext('2d');
+
+  context.beginPath();
+  context.rect(x, y, width, height);
+  context.clip();
+
+  var img = new Image();
+  img.onload = function() {
+      context.drawImage(img, 0, 0);
+      context.lineWidth = 15;
+      context.strokeStyle = '#cccccc';
+      context.strokeRect(x, y, width, height);
+
+      context.fillStyle =
+              'rgba(153, 153, 153, 0.75)';
+       context.fillRect(0, 0, 100, 100);
+  }
+  img.src = 'img/home.jpg';
+}</code></pre>
+    </div>
+    
+    <div class="module-title"><a data-toggle="collapse" href="#reset-code" aria-expanded="false">Reset</a></div>
+    <div class="collapse" id="reset-code">
+      <pre><code class="javascript hljs">var
+    canvas = document.getElementById('canvas'),
+    width = canvas.width,
+    height = canvas.height,
+    context = null;
+
+if (Modernizr.canvas) {
+
+    context = canvas.getContext('2d');
+
+    context.fillStyle =
+        'rgba(153, 153, 153, 0.75)';
+
+    context.strokeStyle = '#999999';
+    context.lineWidth = 5;
+    context.lineCap = 'round';
+
+    context.save();
+
+    context.beginPath();
+    context.moveTo(105, 105);
+    context.lineTo(200, 100);
+    context.lineTo(250, 300);
+    context.lineTo(300, 0);
+    context.closePath();
+    context.stroke();
+    context.clip();
+
+    context.fillRect(0, 0, 215, 215);
+
+    //you can't reset the clip like this...
+    //context.rect(0, 0, width, height);
+    //context.clip();
+
+    context.restore();
+
+    context.fillRect(200, 200, 50, 50);
+}</code></pre>
+    </div>
+    
+    <div class="module-title"><a data-toggle="collapse" href="#non-code" aria-expanded="false">Non-contiguous</a></div>
+    <div class="collapse" id="non-code">
+      <pre><code class="javascript hljs">var
+  canvas = document.getElementById('canvas'),
+  context = null;
+
+if (Modernizr.canvas) {
+
+  context = canvas.getContext('2d');
+
+  context.fillStyle =
+      'rgba(153, 153, 153, 0.75)';
+
+  context.strokeStyle = '#999';
+  context.lineWidth = 5;
+  context.lineCap = 'round';
+    
+  context.save();
+
+  context.rect(0, 0, 100, 100);
+  context.rect(105, 0, 100, 100);
+  context.clip();
+  context.stroke();
+
+  context.fillRect(0, 0, 300, 300);
+
+  context.restore();
+
+  context.fillRect(0, 105, 100, 100);
+}</code></pre>
+    </div>
+    
+    <div class="module-title"><a data-toggle="collapse" href="#magnifier-code" aria-expanded="false">Magnifier</a></div>
+    <div class="collapse" id="magnifier-code">
+      <pre><code class="javascript hljs">var
+  canvas = document.getElementById('canvas'),
+  img = new Image(),
+  context = null,
+  dataUrl = null,
+  isMagnified = false,
+
+  init = function() {
+      img.onload = function() {
+          context.drawImage(img, 0, 0);
+          dataUrl = canvas.toDataURL();
+      }
+      img.src = 'img/home.jpg';
+      isMagnified = false;
+  },
+    
+  magnify = function() {
+      context.save();
+      context.lineWidth = 10;
+      context.shadowColor = '#000';
+      context.shadowBlur = 15;
+      context.shadowOffsetX = 5;
+      context.shadowOffsetY = 5;
+
+      context.save();
+      context.beginPath();
+      context.moveTo(230, 230);
+
+      context.lineCap = 'round';
+      context.lineWidth = 30;
+      context.lineTo(285, 285);
+      context.stroke();
+
+      context.beginPath();
+
+      context.arc(
+                  150,
+                  150,
+                  115,
+                  0,
+                  Math.PI * 2,
+                  true);
+
+      context.clip();
+
+      var magnified = new Image();
+      magnified.src = dataUrl;
+
+      context.scale(1.5, 1.5);
+      context.drawImage(img, -40, -40);
+
+      context.restore();
+
+      context.arc(
+                  150,
+                  150,
+                  115,
+                  0,
+                  Math.PI * 2,
+                  true);
+      context.stroke();
+      context.restore();
+
+      isMagnified = true;
+  };
+
+if (Modernizr.canvas) {
+
+  context = canvas.getContext('2d');
+
+  init();
+    
+  $('canvas').click(function() {
+      if (isMagnified) {
+          init();
+      }
+      else {
+          magnify();
+      }
+  });
+}</code></pre>
+    </div>
+			
+		<!-- -------------------------------------------------------------------- -->
+		</div>
+	</div>
+</div>
+</div>
+            </article>
+            
+            <footer>
+                <div class="container">
+                    <div class="row push-down-top-lg hidden-xs">
+                        <div class="col-xs-offset-2 col-xs-3">
+                            <img src="img/html5-fundamentals.png" title="HTML5 Fundamentals" />
+                            <p>by <a href="http://craigshoemaker.net">Craig Shoemaker</a></p>
+                            <p class="lead"><a href="http://twitter.com/craigshoemaker">Craig Shoemaker</a> is a <a href="http://www.infragistics.com">developer</a>,
+        <a href="http://www.pluralsight.com/author/craig-shoemaker">instructor</a>, <a href="http://code-magazine.com/SearchResults.aspx?search=craig%20shoemaker">writer</a>, <a href="http://polymorphicpodcast.com">podcaster</a>, and a man of many hats at <a href="http://www.infragistics.com">Infragistics</a>.</p>
+                            <div class="push-down-top-md">
+                                <a href="https://www.pluralsight.com/courses/html5-fundamentals"><img src="img/pluralsight.png" title="HTML5 Fundamentals" /></a>
+                            </div>
+                        </div>
+                        <div class="col-xs-offset-1 col-xs-3">
+                            <a href="http://craigshoemaker.net"><img src="img/craig-shoemaker.png" class="img-responsive" title="Craig Shoemaker" /></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+        </main>
+    </body>
+</html>

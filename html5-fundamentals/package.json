@@ -1,0 +1,15 @@
+{
+  "name": "html5-fundamentals",
+  "version": "1.0.0",
+  "description": "Demo application for Pluralsights HTML5 Fundamentals",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -o",
+    "build": "gulp build"
+  },
+  "author": "Craig Shoemaker <craig@craigshoemaker.net>",
+  "license": "CC-BY-NC-ND-4.0",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>HTML5 Fundamentals</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="css/site.css" type="text/css" />
+        <link rel="stylesheet" href="js/highlight/styles/github.css" />
+        <script src="js/modernizr.min.js" type="text/javascript"></script>
+        
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/highlight/highlight.pack.js" type="text/javascript"></script>    
+        <script src="js/app.js" type="text/javascript"></script>
+	</head>
+	<body>
+        <main>
+            <header>
+            <!-- Fixed navbar -->
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/html5-fundamentals.png" title="HTML5 Fundamentals" class="hidden-sm" />
+                        <img src="img/html5.png" title="HTML5 Fundamentals" class="visible-sm" />
+                    </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="example.html" class="nav-link">Example</a></li>
+                        <li class="separator visible-md visible-lg">|</li>
+                        <li><a href="selection.html" class="nav-link">Selection</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Forms<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="forms-markup.html">Forms</a></li>
+                                        <li><a href="forms-pseudo-classes.html">Pseudo Classes</a></li>
+                                        <li><a href="forms-validation.html">Native Validation</a></li>
+                                        <li><a href="forms-validation-custom.html">Custom Validation</a></li>
+                                        <li><a href="forms-validation-bootstrap.html">Bootstrap Module</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Media<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="media-basics.html">Basics</a></li>
+                                        <li><a href="media-scripted.html">Scripted Controls</a></li>
+                                        <li><a href="media-dynamic.html">Dynamic Load</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Canvas<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="canvas-basics.html">Basics</a></li>
+                                        <li><a href="canvas-manipulation.html">Manipulation</a></li>
+                                        <li><a href="canvas-clipping.html">Clipping</a></li>
+                                        <li><a href="canvas-charts.html">Charts</a></li>
+                                        <li><a href="canvas-video.html">Video</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Drag &amp; Drop<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="dd-basics.html">Basics</a></li>
+                                        <li><a href="dd-effects.html">Effects</a></li>
+                                        <li><a href="dd-datatransfer.html">Data Transfer Types</a></li>
+                                        <li><a href="dd-files.html">Files</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+                </nav>
+            </header>
+
+            <article id="content-container" class="container">
+                <div>
+
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs code-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#content-tab" aria-controls="content" role="tab" data-toggle="tab">Content</a></li>
+		<li role="presentation"><a href="#markup-tab" aria-controls="markup" role="tab" data-toggle="tab">Markup</a></li>
+		<li role="presentation"><a href="#css-tab" aria-controls="profile" role="tab" data-toggle="tab">CSS</a></li>
+		<li role="presentation"><a href="#javascript-tab" aria-controls="messages" role="tab" data-toggle="tab">JavaScript</a></li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane fade in active" id="content-tab">
+			<div id="example-container">
+
+				<!-- example markup -->
+                <form id="change-email-form" name="change-email-form">
+                    <input type="text" 
+                            name="username" 
+                            id="username" 
+                            pattern="[a-zA-Z ]{5,}" 
+                            maxlength="30" 
+                            required
+                            placeholder="username"
+                            class="form-control">
+                            
+                    <div class="validation-messages">
+                        <span data-rule="valueMissing" class="hide">The username is required.</span>
+                        <span data-rule="patternMismatch" class="hide">Must be a series of alpha 
+                                characters only (min 5, max 30).</span>
+                    </div>
+
+                    <input type="email" 
+                            id="email" 
+                            title="Email address is required" 
+                            required
+                            placeholder="email address"
+                            class="form-control">
+                            
+                    <div class="validation-messages">
+                        <span data-rule="valueMissing" class="hide">
+                            An email address is required.</span>
+                        <span data-rule="typeMismatch" class="hide">
+                            Special characters are not allowed.</span>
+                        <span data-rule="isAol" class="hide">
+                            Please enter a non-AOL email address :)</span>
+                    </div>
+
+                    <div class="push-down-top">
+                    <button type="button" class="btn btn-link">Cancel</button>
+                    <button type="button" id="login-button" class="btn">Login</button>
+                    </div>
+                </form>
+				<!-- /example markup -->
+
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane fade" id="markup-tab">
+			<pre><code class="html hljs">&lt;form id=&quot;change-email-form&quot; name=&quot;change-email-form&quot;&gt;
+  &lt;input type=&quot;text&quot; 
+    name=&quot;username&quot; 
+    id=&quot;username&quot; 
+    pattern=&quot;[a-zA-Z ]{5,}&quot; 
+    maxlength=&quot;30&quot; 
+    required
+    placeholder=&quot;username&quot;
+    class=&quot;form-control&quot;&gt;
+            
+  &lt;div class=&quot;validation-messages&quot;&gt;
+    &lt;span data-rule=&quot;valueMissing&quot; class=&quot;hide&quot;&gt;The username is required.&lt;/span&gt;
+    &lt;span data-rule=&quot;patternMismatch&quot; class=&quot;hide&quot;&gt;Must be a series of alpha 
+      characters only (min 5, max 30).&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;input type=&quot;email&quot; 
+    id=&quot;email&quot; 
+    title=&quot;Email address is required&quot; 
+    required
+    placeholder=&quot;email address&quot;
+    class=&quot;form-control&quot;&gt;
+            
+  &lt;div class=&quot;validation-messages&quot;&gt;
+    &lt;span data-rule=&quot;valueMissing&quot; class=&quot;hide&quot;&gt;
+      An email address is required.&lt;/span&gt;
+    &lt;span data-rule=&quot;typeMismatch&quot; class=&quot;hide&quot;&gt;
+      Special characters are not allowed.&lt;/span&gt;
+    &lt;span data-rule=&quot;isAol&quot; class=&quot;hide&quot;&gt;
+      Please enter a non-AOL email address :)&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;push-down-top&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-link&quot;&gt;Cancel&lt;/button&gt;
+    &lt;button type=&quot;button&quot; id=&quot;login-button&quot; class=&quot;btn&quot;&gt;Login&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+		</div>
+		<div role="tabpanel" class="tab-pane fade" id="css-tab">
+			<pre><code class="css hljs">input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid {
+  color: #c33;
+  border-color: #c33;
+}
+
+input:focus:invalid:focus,
+textarea:focus:invalid:focus,
+select:focus:invalid:focus {
+  border-color: #c33;
+  -webkit-box-shadow: 0 0 6px #fcc;
+     -moz-box-shadow: 0 0 6px #fcc;
+          box-shadow: 0 0 6px #fcc;
+}
+
+input:invalid,
+textarea:invalid,
+select:invalid {
+  border-bottom: 1px solid #c33;
+}
+
+input:valid + .invalid /* Adjacent sibling selector */ {
+  visibility: hidden;
+}
+
+input:invalid + .invalid {
+  visibility: visible;
+}
+
+input:required {
+  border-left: 4px solid #c33;
+}
+
+input:valid {
+  border-bottom: transparent;
+}
+
+.invalid {
+  color: #999;
+}</code></pre>
+		</div>
+
+
+		<div role="tabpanel" class="tab-pane fade" id="javascript-tab">
+            <pre><code class="javascript hljs">document.addEventListener('DOMContentLoaded', function(event) {
+  // Create a container for validation rule names.
+  var ruleNames = [];
+  var forEach = Array.prototype.forEach;
+  
+  var ruleElements = document.querySelectorAll('[data-rule]');
+  
+  forEach.call(ruleElements, function(element) {
+    var ruleName = element.getAttribute('data-rule');
+    if (ruleNames.indexOf(ruleName) === -1) {
+        ruleNames.push(ruleName);
+    }
+  });
+  
+  var validate = function() {
+      var messageElements = document.querySelectorAll(".validation-messages span");
+      
+      forEach.call(messageElements, function(element){
+        element.classList.add('hide');
+      });
+
+      validateAgainstCustomRules();
+
+      document.getElementById('change-email-form').checkValidity();
+  };
+  
+  var validationFail = function(e) {
+      var element, validity;
+      
+      element = e.currentTarget;
+      validity = element.validity;
+  
+      if (!validity.valid) {
+        ruleNames.forEach(function(ruleName) {
+          checkRule(validity, ruleName, element);
+        });
+  
+        e.preventDefault();
+      }
+  };
+    
+  var checkRule = function(state, ruleName, element) {      
+    if (state[ruleName]) {
+      
+      var rules = element
+                        .nextElementSibling
+                        .querySelectorAll('[data-rule="' + ruleName + '"]');
+      
+      forEach.call(rules, function(rule){
+        rule.classList.remove('hide');
+      });
+    }
+  };
+  
+  var validateAgainstPattern = function(element, pattern, ruleName) {
+  
+      if (element.value.match(pattern)) {
+        element.setCustomValidity('invalid');
+
+        element.nextElementSibling
+               .querySelector('[data-rule="' + ruleName + '"]')
+               .classList
+               .remove('hide');
+      }
+      else {
+        element.setCustomValidity('');
+      }
+  };
+  
+  var validateAgainstCustomRules = function() {
+      validateAgainstPattern(document.getElementById('email'), /@aol.com/i, 'isAol');
+  };
+  
+  var inputElements = document.querySelectorAll('input:not(button)');
+  forEach.call(inputElements, function(input) {
+      input.oninvalid = validationFail;
+      input.onblur = validate;
+  });
+  
+  document.getElementById('login-button').addEventListener('click', validate, false);
+});</code></pre>
+		</div>
+
+		<!-- -------------------------------------------------------------------- -->
+			
+			<script>
+document.addEventListener('DOMContentLoaded', function(event) {
+  // Create a container for validation rule names.
+  var ruleNames = [];
+  var forEach = Array.prototype.forEach;
+  
+  var ruleElements = document.querySelectorAll('[data-rule]');
+  
+  forEach.call(ruleElements, function(element) {
+    var ruleName = element.getAttribute('data-rule');
+    if (ruleNames.indexOf(ruleName) === -1) {
+        ruleNames.push(ruleName);
+    }
+  });
+  
+  var validate = function() {
+      var messageElements = document.querySelectorAll(".validation-messages span");
+      
+      forEach.call(messageElements, function(element){
+        element.classList.add('hide');
+      });
+
+      validateAgainstCustomRules();
+
+      document.getElementById('change-email-form').checkValidity();
+  };
+  
+  var validationFail = function(e) {
+      var element, validity;
+      
+      element = e.currentTarget;
+      validity = element.validity;
+  
+      if (!validity.valid) {
+        ruleNames.forEach(function(ruleName) {
+          checkRule(validity, ruleName, element);
+        });
+  
+        e.preventDefault();
+      }
+  };
+    
+  var checkRule = function(state, ruleName, element) {      
+    if (state[ruleName]) {
+      
+      var rules = element
+                        .nextElementSibling
+                        .querySelectorAll('[data-rule="' + ruleName + '"]');
+      
+      forEach.call(rules, function(rule){
+        rule.classList.remove('hide');
+      });
+    }
+  };
+  
+  var validateAgainstPattern = function(element, pattern, ruleName) {
+  
+      if (element.value.match(pattern)) {
+        element.setCustomValidity('invalid');
+
+        element.nextElementSibling
+               .querySelector('[data-rule="' + ruleName + '"]')
+               .classList
+               .remove('hide');
+      }
+      else {
+        element.setCustomValidity('');
+      }
+  };
+  
+  var validateAgainstCustomRules = function() {
+      validateAgainstPattern(document.getElementById('email'), /@aol.com/i, 'isAol');
+  };
+  
+  var inputElements = document.querySelectorAll('input:not(button)');
+  forEach.call(inputElements, function(input) {
+      input.oninvalid = validationFail;
+      input.onblur = validate;
+  });
+  
+  document.getElementById('login-button').addEventListener('click', validate, false);
+});
+		</script>
+	</div>
+</div>
+            </article>
+            
+            <footer>
+                <div class="container">
+                    <div class="row push-down-top-lg hidden-xs">
+                        <div class="col-xs-offset-2 col-xs-3">
+                            <img src="img/html5-fundamentals.png" title="HTML5 Fundamentals" />
+                            <p>by <a href="http://craigshoemaker.net">Craig Shoemaker</a></p>
+                            <p class="lead"><a href="http://twitter.com/craigshoemaker">Craig Shoemaker</a> is a <a href="http://www.infragistics.com">developer</a>,
+        <a href="http://www.pluralsight.com/author/craig-shoemaker">instructor</a>, <a href="http://code-magazine.com/SearchResults.aspx?search=craig%20shoemaker">writer</a>, <a href="http://polymorphicpodcast.com">podcaster</a>, and a man of many hats at <a href="http://www.infragistics.com">Infragistics</a>.</p>
+                            <div class="push-down-top-md">
+                                <a href="https://www.pluralsight.com/courses/html5-fundamentals"><img src="img/pluralsight.png" title="HTML5 Fundamentals" /></a>
+                            </div>
+                        </div>
+                        <div class="col-xs-offset-1 col-xs-3">
+                            <a href="http://craigshoemaker.net"><img src="img/craig-shoemaker.png" class="img-responsive" title="Craig Shoemaker" /></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+        </main>
+    </body>
+</html>

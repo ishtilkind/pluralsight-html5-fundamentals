@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>HTML5 Fundamentals</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="css/site.css" type="text/css" />
+        <link rel="stylesheet" href="js/highlight/styles/github.css" />
+        <script src="js/modernizr.min.js" type="text/javascript"></script>
+        
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/highlight/highlight.pack.js" type="text/javascript"></script>    
+        <script src="js/app.js" type="text/javascript"></script>
+	</head>
+	<body>
+        <main>
+            <header>
+            <!-- Fixed navbar -->
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/html5-fundamentals.png" title="HTML5 Fundamentals" class="hidden-sm" />
+                        <img src="img/html5.png" title="HTML5 Fundamentals" class="visible-sm" />
+                    </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="example.html" class="nav-link">Example</a></li>
+                        <li class="separator visible-md visible-lg">|</li>
+                        <li><a href="selection.html" class="nav-link">Selection</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Forms<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="forms-markup.html">Forms</a></li>
+                                        <li><a href="forms-pseudo-classes.html">Pseudo Classes</a></li>
+                                        <li><a href="forms-validation.html">Native Validation</a></li>
+                                        <li><a href="forms-validation-custom.html">Custom Validation</a></li>
+                                        <li><a href="forms-validation-bootstrap.html">Bootstrap Module</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Media<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="media-basics.html">Basics</a></li>
+                                        <li><a href="media-scripted.html">Scripted Controls</a></li>
+                                        <li><a href="media-dynamic.html">Dynamic Load</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Canvas<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="canvas-basics.html">Basics</a></li>
+                                        <li><a href="canvas-manipulation.html">Manipulation</a></li>
+                                        <li><a href="canvas-clipping.html">Clipping</a></li>
+                                        <li><a href="canvas-charts.html">Charts</a></li>
+                                        <li><a href="canvas-video.html">Video</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Drag &amp; Drop<span class="caret"></span>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="dd-basics.html">Basics</a></li>
+                                        <li><a href="dd-effects.html">Effects</a></li>
+                                        <li><a href="dd-datatransfer.html">Data Transfer Types</a></li>
+                                        <li><a href="dd-files.html">Files</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+                </nav>
+            </header>
+
+            <article id="content-container" class="container">
+                <div>
+
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs code-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#content-tab" aria-controls="content" role="tab" data-toggle="tab">Content</a></li>
+		<li role="presentation"><a href="#markup-tab" aria-controls="markup" role="tab" data-toggle="tab">Markup</a></li>
+		<li role="presentation"><a href="#css-tab" aria-controls="profile" role="tab" data-toggle="tab">CSS</a></li>
+		<li role="presentation"><a href="#javascript-tab" aria-controls="messages" role="tab" data-toggle="tab">JavaScript</a></li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane fade in active" id="content-tab">
+			<div id="example-container">
+        
+				<!-- example markup -->
+                <div id="target" class="well">
+                    <h4>Drop Here: <span id="count">0</span></h4>
+                </div>
+
+                <div id="source" draggable="true" class="well"><h4>Drag Me</h4></div>
+
+                <!-- WebKit has a bug where 'move' is not reported -->
+                <div class="well well-small">Effect reported in dragEnd: 
+                    <span id="msg"></span></div>
+
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h5>Source: effectAllowed</h5>
+
+                        <input id="copy-allowed" type="radio" 
+                            name="allowed" checked="true" value="copy" /> 
+                        <label for="copy-allowed">copy</label>
+
+                        <input id="move-allowed" type="radio" 
+                            name="allowed" value="move" />
+                        <label for="move-allowed">move</label>
+
+                        <input id="link-allowed" type="radio" 
+                            name="allowed" value="link" />
+                        <label for="link-allowed">link</label>
+
+                        <input id="none-allowed" type="radio" 
+                            name="allowed" value="none" />
+                        <label for="none-allowed">none</label>
+
+                        <input id="copyLink-allowed" type="radio" 
+                            name="allowed" value="copyLink" />
+                        <label for="copyLink-allowed">copyLink</label>
+
+                        <input id="linkMove-allowed" type="radio" 
+                            name="allowed" value="linkMove" />
+                        <label for="linkMove-allowed">linkMove</label>
+
+                        <input id="all-allowed" type="radio" 
+                            name="allowed" value="all" />
+                        <label for="all-allowed">all</label>
+
+                        <input id="uninitialized-allowed" type="radio" 
+                            name="allowed" value="uninitialized" />
+                        <label for="uninitialized-allowed">uninitialized</label>
+                    </div>
+                    <div class="span6">
+                        <h5>Target: dropEffect</h5>
+
+                        <input id="copy-effect" type="radio" name="effect" checked value="copy" /> 
+                        <label for="copy-effect">copy</label>
+
+                        <input id="move-effect" type="radio" name="effect" value="move" />
+                        <label for="move-effect">move</label>
+
+                        <input id="link-effect" type="radio" name="effect" value="link" />
+                        <label for="link-effect">link</label>
+
+                        <input id="none-effect" type="radio" name="effect" value="none" />
+                        <label for="none-effect">none</label>
+                    </div>
+                    
+                </div>
+				<!-- /example markup -->
+
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane fade" id="markup-tab">
+			<pre><code class="html hljs">&lt;div id=&quot;target&quot; class=&quot;well&quot;&gt;
+    &lt;h4&gt;Drop Here: &lt;span id=&quot;count&quot;&gt;0&lt;/span&gt;&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;source&quot; draggable=&quot;true&quot; class=&quot;well&quot;&gt;&lt;h4&gt;Drag Me&lt;/h4&gt;&lt;/div&gt;
+
+&lt;div class=&quot;well well-small&quot;&gt;Effect reported in dragEnd: 
+    &lt;span id=&quot;msg&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;div class=&quot;row-fluid&quot;&gt;
+    &lt;div class=&quot;span6&quot;&gt;
+        &lt;h5&gt;Source: effectAllowed&lt;/h5&gt;
+
+        &lt;input id=&quot;copy-allowed&quot; type=&quot;radio&quot; 
+            name=&quot;allowed&quot; checked=&quot;true&quot; value=&quot;copy&quot; /&gt; 
+        &lt;label for=&quot;copy-allowed&quot;&gt;copy&lt;/label&gt;
+
+        &lt;input id=&quot;move-allowed&quot; type=&quot;radio&quot; 
+            name=&quot;allowed&quot; value=&quot;move&quot; /&gt;
+        &lt;label for=&quot;move-allowed&quot;&gt;move&lt;/label&gt;
+
+        &lt;input id=&quot;link-allowed&quot; type=&quot;radio&quot; 
+            name=&quot;allowed&quot; value=&quot;link&quot; /&gt;
+        &lt;label for=&quot;link-allowed&quot;&gt;link&lt;/label&gt;
+
+        &lt;input id=&quot;none-allowed&quot; type=&quot;radio&quot; 
+            name=&quot;allowed&quot; value=&quot;none&quot; /&gt;
+        &lt;label for=&quot;none-allowed&quot;&gt;none&lt;/label&gt;
+
+        &lt;input id=&quot;copyLink-allowed&quot; type=&quot;radio&quot; 
+            name=&quot;allowed&quot; value=&quot;copyLink&quot; /&gt;
+        &lt;label for=&quot;copyLink-allowed&quot;&gt;copyLink&lt;/label&gt;
+
+        &lt;input id=&quot;linkMove-allowed&quot; type=&quot;radio&quot; 
+            name=&quot;allowed&quot; value=&quot;linkMove&quot; /&gt;
+        &lt;label for=&quot;linkMove-allowed&quot;&gt;linkMove&lt;/label&gt;
+
+        &lt;input id=&quot;all-allowed&quot; type=&quot;radio&quot; 
+            name=&quot;allowed&quot; value=&quot;all&quot; /&gt;
+        &lt;label for=&quot;all-allowed&quot;&gt;all&lt;/label&gt;
+
+        &lt;input id=&quot;uninitialized-allowed&quot; type=&quot;radio&quot; 
+            name=&quot;allowed&quot; value=&quot;uninitialized&quot; /&gt;
+        &lt;label for=&quot;uninitialized-allowed&quot;&gt;uninitialized&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span6&quot;&gt;
+        &lt;h5&gt;Target: dropEffect&lt;/h5&gt;
+
+        &lt;input id=&quot;copy-effect&quot; type=&quot;radio&quot; name=&quot;effect&quot; checked value=&quot;copy&quot; /&gt; 
+        &lt;label for=&quot;copy-effect&quot;&gt;copy&lt;/label&gt;
+
+        &lt;input id=&quot;move-effect&quot; type=&quot;radio&quot; name=&quot;effect&quot; value=&quot;move&quot; /&gt;
+        &lt;label for=&quot;move-effect&quot;&gt;move&lt;/label&gt;
+
+        &lt;input id=&quot;link-effect&quot; type=&quot;radio&quot; name=&quot;effect&quot; value=&quot;link&quot; /&gt;
+        &lt;label for=&quot;link-effect&quot;&gt;link&lt;/label&gt;
+
+        &lt;input id=&quot;none-effect&quot; type=&quot;radio&quot; name=&quot;effect&quot; value=&quot;none&quot; /&gt;
+        &lt;label for=&quot;none-effect&quot;&gt;none&lt;/label&gt;
+    &lt;/div&gt;
+    
+&lt;/div&gt;</code></pre>
+		</div>
+		<div role="tabpanel" class="tab-pane fade" id="css-tab">
+			<pre><code class="css hljs">/* none */</code></pre>
+		</div>
+
+
+		<div role="tabpanel" class="tab-pane fade" id="javascript-tab">
+				<pre><code class="javascript hljs">var cancel = function(e) {
+    if (e.preventDefault) e.preventDefault();
+    if (e.stopPropagation) e.stopPropagation();
+    return false;
+};
+
+var dragLeave = function(e) {
+    this.classList.remove('over');
+};
+
+var dragOver = function(e) {
+    cancel(e);
+    var element = document.querySelector('input[name="effect"]:checked');
+    e.dataTransfer.dropEffect = element.value;
+    this.classList.add('over');
+};
+
+var dropped = function(e) {
+    cancel(e);
+
+    var
+    countElement = document.getElementById('count'),
+    count = countElement.innerText;
+
+    count++;
+
+    countElement.innerText = count;
+    target.classList.remove('over');
+};
+
+var source = document.getElementById('source');
+source.addEventListener('dragstart', dragStart, false);
+source.addEventListener('dragend', dragEnd, false);
+
+var target = document.getElementById('target');
+target.addEventListener('dragenter', cancel, false);
+target.addEventListener('dragover', dragOver, false);
+target.addEventListener('dragleave', dragLeave, false);
+target.addEventListener('drop', dropped, false);</code></pre>
+		</div>
+
+		<!-- -------------------------------------------------------------------- -->
+			
+			<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            var cancel = function(e) {
+              if (e.preventDefault) e.preventDefault();
+              if (e.stopPropagation) e.stopPropagation();
+              return false;
+            };
+
+            var dragStart = function(e) {
+                var element = document.querySelector('input[name="allowed"]:checked');
+                e.dataTransfer.effectAllowed = element.value;
+
+                try {
+                    e.dataTransfer.setData('text/plain', '');
+                } catch (e) {
+                    e.dataTransfer.setData('Text', '');
+                }
+            };
+
+            var dragEnd = function(e) {
+                document.getElementById('msg').innerText = e.dataTransfer.dropEffect;
+            };
+
+            var dropped = function(e) {
+                cancel(e);
+            var
+                countElement = document.getElementById('count'),
+                count = countElement.innerText;
+
+                count++;
+
+                countElement.innerText = count;
+                target.classList.remove('over');
+            };
+
+            var dragLeave = function(e) {
+                this.classList.remove('over');
+            };
+
+            var dragOver = function(e) {
+                cancel(e);
+                var element = document.querySelector('input[name="effect"]:checked');
+                e.dataTransfer.dropEffect = element.value;
+                this.classList.add('over');
+            };
+
+            var source = document.getElementById('source');
+            source.addEventListener('dragstart', dragStart, false);
+            source.addEventListener('dragend', dragEnd, false);
+
+            var target = document.getElementById('target');
+            target.addEventListener('dragenter', cancel, false);
+            target.addEventListener('dragover', dragOver, false);
+            target.addEventListener('dragleave', dragLeave, false);
+            target.addEventListener('drop', dropped, false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </script>
+		</div>
+	</div>
+</div>
+</div>
+            </article>
+            
+            <footer>
+                <div class="container">
+                    <div class="row push-down-top-lg hidden-xs">
+                        <div class="col-xs-offset-2 col-xs-3">
+                            <img src="img/html5-fundamentals.png" title="HTML5 Fundamentals" />
+                            <p>by <a href="http://craigshoemaker.net">Craig Shoemaker</a></p>
+                            <p class="lead"><a href="http://twitter.com/craigshoemaker">Craig Shoemaker</a> is a <a href="http://www.infragistics.com">developer</a>,
+        <a href="http://www.pluralsight.com/author/craig-shoemaker">instructor</a>, <a href="http://code-magazine.com/SearchResults.aspx?search=craig%20shoemaker">writer</a>, <a href="http://polymorphicpodcast.com">podcaster</a>, and a man of many hats at <a href="http://www.infragistics.com">Infragistics</a>.</p>
+                            <div class="push-down-top-md">
+                                <a href="https://www.pluralsight.com/courses/html5-fundamentals"><img src="img/pluralsight.png" title="HTML5 Fundamentals" /></a>
+                            </div>
+                        </div>
+                        <div class="col-xs-offset-1 col-xs-3">
+                            <a href="http://craigshoemaker.net"><img src="img/craig-shoemaker.png" class="img-responsive" title="Craig Shoemaker" /></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+        </main>
+    </body>
+</html>
